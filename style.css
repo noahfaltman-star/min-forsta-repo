@@ -1,0 +1,156 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+}
+
+header {
+	border: 1px solid;
+}
+/* Navbar for header */
+#navheader ul {
+	background-color: black;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+}
+
+#navheader a {
+	text-decoration: none;
+	color: white;
+	display: block;
+	text-align: center;
+	padding: 15px;
+}
+
+#navheader a:hover {
+	background-color: rgb(23, 117, 140);
+}
+
+.navheaderleft {
+	float: left;
+}
+
+.navheaderright {
+	float: right;
+}
+/* Navbar for header-END */
+main {
+	width: 100%;
+	height: 100vh;
+	overflow-y: scroll;
+	scroll-snap-type: y mandatory;
+}
+section {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+
+	scroll-snap-align: start;
+}
+#section1 {
+	background-image: url(grandturismo.jpg);
+	width: 100%;
+	height: 95vh;
+	background-position: center;
+	background-size: cover;
+	padding: 100px;
+	color: white;
+}
+
+#sec1-title {
+	margin-bottom: 40%;
+	font-size: 50px;
+}
+
+#sec1-content {
+	width: 40%;
+	margin-left: 30%;
+
+	font-size: large;
+}
+
+#section2 {
+	background-image: url("https://picsum.photos/id/111/600/400");
+	background-position: center;
+	background-size: cover;
+	background-color: grey;
+}
+
+#card-container {
+	gap: 50px;
+	padding: 20px;
+	margin-top: 4%;
+	display: grid;
+
+	grid-template-rows: repeat(4, 1fr);
+	grid-template-columns: repeat(4, 1fr);
+
+	grid-template-areas:
+		". card1 card2 ."
+		". card3 card4 .";
+}
+
+#card1 {
+	grid-area: card1;
+}
+#card2 {
+	grid-area: card2;
+}
+#card3 {
+	grid-area: card3;
+}
+#card4 {
+	grid-area: card4;
+}
+#card5 {
+	grid-area: card5;
+}
+#card6 {
+	grid-area: card6;
+}
+
+.card {
+	background-color: white;
+	gap: 10px;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 1px 3px 2px 4px;
+	display: grid;
+
+	grid-template-rows: repeat(2, 130px);
+	grid-template-columns: repeat(2, 1fr);
+
+	grid-template-areas:
+		"title img "
+		"text text "
+		". btn";
+}
+
+.card:hover {
+	background-color: rgb(23, 117, 140);
+}
+
+.card-title {
+	grid-area: title;
+}
+
+.card-img {
+	grid-area: img;
+	border-radius: 10px;
+	border: 2px solid;
+}
+
+.card-content {
+	grid-area: text;
+	margin-top: 40px;
+}
+
+.card-btn {
+	grid-area: btn;
+	background-color: black;
+	padding: 10px;
+}
+
+footer {
+}
