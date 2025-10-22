@@ -148,8 +148,17 @@ section {
 
 .card-btn {
 	grid-area: btn;
-	background-color: black;
+	background-color: grey;
+	border: 2px solid ;
+	box-shadow: 1px 2px 1px 3px black;
+	border-radius: 10px;
 	padding: 10px;
+	text-decoration: none;
+	color: white;
+}
+
+.card-btn:hover{
+	background-color: rgb(7, 53, 65);
 }
 
 footer {
