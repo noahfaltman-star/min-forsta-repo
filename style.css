@@ -1,6 +1,7 @@
 * {
 	box-sizing: border-box;
 	margin: 0;
+	padding: 0;
 }
 
 header {
@@ -44,18 +45,19 @@ main {
 section {
 	width: 100%;
 	height: 100vh;
-	display: flex;
-
 	scroll-snap-align: start;
 }
 #section1 {
+	display: flex;
 	background-image: url(grandturismo.jpg);
-	width: 100%;
+	width: auto;
 	height: 95vh;
 	background-position: center;
 	background-size: cover;
 	padding: 100px;
-	color: white;
+	color: rgb(0, 0, 0);
+	flex-grow: 1;
+	flex-shrink: 1;
 }
 
 #sec1-title {
@@ -71,95 +73,99 @@ section {
 }
 
 #section2 {
-	background-image: url("https://picsum.photos/id/111/600/400");
-	background-position: center;
-	background-size: cover;
-	background-color: grey;
+	background-color: rgb(36, 36, 36);
+	width: 100%;
+	height: 100vh;
 }
 
-#card-container {
-	gap: 50px;
-	padding: 20px;
-	margin-top: 4%;
-	display: grid;
-
-	grid-template-rows: repeat(4, 1fr);
-	grid-template-columns: repeat(4, 1fr);
-
-	grid-template-areas:
-		". card1 card2 ."
-		". card3 card4 .";
+#sec2-row {
+	height: 100%;
+	width: 100%;
 }
 
-#card1 {
-	grid-area: card1;
+#sec2-heading {
+	width: 100%;
+	text-align: center;
+	padding: 10px 0;
+	font-size: 2.5rem;
+	font-weight: bold;
 }
-#card2 {
-	grid-area: card2;
-}
-#card3 {
-	grid-area: card3;
-}
-#card4 {
-	grid-area: card4;
-}
-#card5 {
-	grid-area: card5;
-}
-#card6 {
-	grid-area: card6;
+#sec2-box-slider {
+	position: relative;
+	height: 85%;
+	width: 100%;
+	padding: 50px 80px;
+	display: flex;
+	gap: 15px;
 }
 
-.card {
-	background-color: white;
-	gap: 10px;
-	padding: 20px;
-	border-radius: 8px;
-	box-shadow: 1px 3px 2px 4px;
-	display: grid;
-
-	grid-template-rows: repeat(2, 130px);
-	grid-template-columns: repeat(2, 1fr);
-
-	grid-template-areas:
-		"title img "
-		"text text "
-		". btn";
+.sec2-box {
+	position: relative;
+	height: 100%;
+	width: calc(100% / 5);
+	overflow: hidden;
+	transition: 0.3s linear;
+	transform: skewX(5deg);
 }
 
-.card:hover {
-	background-color: rgb(23, 117, 140);
+.sec2-box::before {
+	position: absolute;
+	content: "";
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
 }
 
-.card-title {
-	grid-area: title;
+.sec2-img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
 }
 
-.card-img {
-	grid-area: img;
-	border-radius: 10px;
-	border: 2px solid;
+.sec2-info {
+	position: absolute;
+	bottom: -100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: black;
+	background-color: rgb(255, 255, 255, 0.7);
+	padding: 20px 0;
+	transition: 0.3s linear;
 }
 
-.card-content {
-	grid-area: text;
-	margin-top: 40px;
+.sec2-box:hover .sec2-info {
+	bottom: 0;
 }
 
-.card-btn {
-	grid-area: btn;
-	background-color: grey;
-	border: 2px solid ;
-	box-shadow: 1px 2px 1px 3px black;
-	border-radius: 10px;
-	padding: 10px;
-	text-decoration: none;
-	color: white;
-}
-
-.card-btn:hover{
-	background-color: rgb(7, 53, 65);
+.sec2-box:hover {
+	width: calc(100% / 0.5);
 }
 
 footer {
+	background-color: rgb(36, 36, 36);
+	color: white;
+	gap: 5rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 25vh;
+}
+
+#navfooter {
+	display: flex;
+}
+
+.navfbox {
+	flex-grow: 1;
+	padding: 20px;
+	text-align: center;
+	text-decoration: none;
+	color: white;
 }
